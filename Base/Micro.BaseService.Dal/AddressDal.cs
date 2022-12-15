@@ -76,7 +76,7 @@ namespace Micro.BaseService.Dal
         /// <summary>
         /// 查询
         /// </summary>
-        /// <param name="namecn">主键ID</param>
+        /// <param name="namecn">中文名</param>
         /// <returns></returns>
         public t_Sys_Address QueryByNameCn(string namecn)
         {

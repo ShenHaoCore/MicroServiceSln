@@ -64,6 +64,48 @@ namespace Micro.BaseService.Behand.Controllers
         /// <summary>
         /// 查询
         /// </summary>
+        /// <param name="id">主键ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        public BaseResponseObject<t_Sys_Address> QueryById([FromQuery] Guid id)
+        {
+            BaseResponseObject<t_Sys_Address> qryResponse = new BaseResponseObject<t_Sys_Address>();
+            qryResponse.IsSuccess = true;
+            qryResponse.Result = AddrBll.QueryById(id);
+            return qryResponse;
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="namecn">中文名</param>
+        /// <returns></returns>
+        [HttpGet]
+        public BaseResponseObject<t_Sys_Address> QueryByNameCn([FromQuery] string namecn)
+        {
+            BaseResponseObject<t_Sys_Address> qryResponse = new BaseResponseObject<t_Sys_Address>();
+            qryResponse.IsSuccess = true;
+            qryResponse.Result = AddrBll.QueryByNameCn(namecn);
+            return qryResponse;
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="nameen">英文名</param>
+        /// <returns></returns>
+        [HttpGet]
+        public BaseResponseObject<t_Sys_Address> QueryByNameEn([FromQuery] string nameen)
+        {
+            BaseResponseObject<t_Sys_Address> qryResponse = new BaseResponseObject<t_Sys_Address>();
+            qryResponse.IsSuccess = true;
+            qryResponse.Result = AddrBll.QueryByNameEn(nameen);
+            return qryResponse;
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
         /// <param name="qryRequest"></param>
         /// <returns></returns>
         [HttpPost]
@@ -81,7 +123,6 @@ namespace Micro.BaseService.Behand.Controllers
         public BaseResponse Insert()
         {
             BaseResponse qryResponse = new BaseResponse();
-            string routePrefix = AppSetting.Get("SystemSetting", "RoutePrefix");
             return qryResponse;
         }
         #endregion

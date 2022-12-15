@@ -48,6 +48,36 @@ namespace Micro.BaseService.Bll
         }
 
         /// <summary>
+        /// 查询下级（包含自己）
+        /// </summary>
+        /// <param name="id">主键ID</param>
+        /// <returns></returns>
+        public t_Sys_Address QueryById(Guid id)
+        {
+            return AddrDal.QueryById(id);
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="namecn">中文名</param>
+        /// <returns></returns>
+        public t_Sys_Address QueryByNameCn(string namecn)
+        {
+            return AddrDal.QueryByNameCn(namecn);
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="nameen">英文名</param>
+        /// <returns></returns>
+        public t_Sys_Address QueryByNameEn(string nameen)
+        {
+            return AddrDal.QueryByNameEn(nameen);
+        }
+
+        /// <summary>
         /// 新增
         /// </summary>
         /// <returns></returns>
