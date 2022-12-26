@@ -137,6 +137,18 @@ namespace Micro.BaseService.Behand.Controllers
             BaseResponse updResponse = new BaseResponse();
             return updResponse;
         }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        public BaseResponse Delete([FromQuery] Guid id)
+        {
+            BaseResponse delResponse = new BaseResponse();
+            return delResponse;
+        }
         #endregion
     }
 }
